@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/background1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -15,7 +24,10 @@
         android:layout_gravity="center|center_horizontal"
         android:layout_margin="@dimen/fab_margin"
         android:tint="@android:color/white"
+        app:backgroundTint="@color/design_default_color_primary"
         app:fabCustomSize="120dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center"
         app:maxImageSize="60dp"
         app:srcCompat="@drawable/ic_mic_black_24dp" />
 
